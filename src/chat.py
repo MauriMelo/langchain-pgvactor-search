@@ -1,12 +1,11 @@
 from search import search_prompt
 
 def main():
-    chain = search_prompt()
-
-    if not chain:
-        print("Não foi possível iniciar o chat. Verifique os erros de inicialização.")
-        return
-    
+    question = input("Digite sua pergunta: ")
+    while question.strip():
+        chain = search_prompt(question)
+        print(chain.content)
+        question = input("Digite sua pergunta: ")
     pass
 
 if __name__ == "__main__":
